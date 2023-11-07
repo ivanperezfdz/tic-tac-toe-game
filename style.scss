@@ -1,0 +1,181 @@
+$primary-text-color: #173259;
+$grey-color: #e2e5e9;
+$btn-color-primary: #29ddb9;
+$white: #fff;
+$x-background-primary: #e5fffa;
+$x-background-secondary: #faf3db;
+$o-background-primary: #fff3f2;
+$o-background-secondary: #edf0f5;
+
+main {
+  font-family: "Montserrat", sans-serif;
+  color: $primary-text-color;
+  text-align: center;
+
+  .extra-bold {
+    font-weight: 800;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .semi-bold {
+    font-weight: 600;
+  }
+
+  hr {
+    margin: 24px 0;
+  }
+
+  &.container {
+    width: 344px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+// Dentro del shadow DOM
+
+.wrapper {
+  .turn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 8px;
+    margin: 0 auto;
+
+    td {
+      box-shadow: 0 2px 4px 0 rgba(121, 122, 122, 0.4);
+      border-radius: 2px;
+      width: 109px;
+      height: 109px;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $white;
+
+      .img-played {
+        height: 56px;
+        width: 56px;
+      }
+
+      &.X-selected {
+        background-color: $x-background-primary;
+
+        &.X-selected-secondary {
+          background-color: $x-background-secondary;
+        }
+      }
+
+      &.O-selected {
+        background-color: $o-background-primary;
+
+        &.O-selected-secondary {
+          background-color: $o-background-secondary;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px;
+      font-size: 1em;
+      background-color: #4caf50; /* Green */
+      color: white;
+      border: none;
+      width: 20%;
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      cursor: pointer;
+      font-family: "Montserrat";
+      height: 48px;
+      border: none;
+      border-radius: 2px;
+      background-color: $btn-color-primary;
+      color: $white;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 13px;
+      margin-top: 20px;
+
+      &.secondary {
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $btn-color-primary;
+        background-color: transparent;
+        color: $btn-color-primary;
+        height: 32px;
+        width: 120px;
+        font-size: 12px;
+      }
+    }
+
+    .points-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .points-text {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .points-player-wrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+
+        .points-player-wrapper-single {
+          display: flex;
+          align-items: center;
+
+          img {
+            height: 32px;
+            width: 32px;
+          }
+
+          p {
+            margin-left: 4px;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .new-game-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+
+      input {
+        margin-top: 20px;
+        height: 48px;
+      }
+    }
+  }
+}
